@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/asset?Unicode=true&amp;characterEncoding=UTF8&amp;useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"
+                        userId="root"
+                        password="mysql">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator
+                targetPackage="org.shancm.asset.common.model" targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"  targetProject=".\src\main\resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- 指定dao接口生成目录 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="org.shancm.asset.biz.dao"  targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <table tableName="agency" domainObjectName="Agency"></table>
+        <!--<table tableName="blog" domainObjectName="Blog"></table>
+        <table tableName="comment" domainObjectName="Comment"></table>
+        <table tableName="community" domainObjectName="Community"></table>
+        <table tableName="house" domainObjectName="House"></table>
+        <table tableName="house_msg" domainObjectName="HouseMsg"></table>
+        <table tableName="house_user" domainObjectName="HouseUser"></table>
+        <table tableName="user" domainObjectName="User"></table>-->
+
+    </context>
+</generatorConfiguration>
