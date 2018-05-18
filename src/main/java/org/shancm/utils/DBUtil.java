@@ -33,4 +33,28 @@ public class DBUtil {
 		
 		return conn;
 	}
+
+	public static Connection getDevConnection() throws IOException  {
+		Properties prop = new Properties();
+		InputStream is = DBUtil.class.getClassLoader().
+				getResourceAsStream("dev-config.properties");
+		prop.load(is);
+
+		String driver = prop.getProperty("driver");
+		String url = prop.getProperty("url");
+		String user = prop.getProperty("user");
+		String password = prop.getProperty("password");
+
+		Connection conn = null;
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url, user, password);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return conn;
+	}
 }

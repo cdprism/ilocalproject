@@ -19,17 +19,6 @@ public class EntryCase {
 			System.out.println(entry.getKey()+"="+entry.getValue());
 		}*/
 
-        String time = "20171212151300";
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddhhmmss");
-//        System.out.println(format.parse(time));
-
-
-        List list = new ArrayList();
-        for (int i = 0; i < 100; i++) {
-            list.add(i);
-        }
-        list.forEach(n -> System.out.println(n));
-
 
     }
 }

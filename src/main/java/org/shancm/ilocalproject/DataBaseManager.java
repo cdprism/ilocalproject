@@ -24,6 +24,9 @@ import org.shancm.utils.DBUtil;
 
 public class DataBaseManager {
 
+
+
+
 	/*public static void main(String[] args) throws Exception {
 
 		ExecutorService threadPool = Executors.newFixedThreadPool(250);
