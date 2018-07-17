@@ -3,8 +3,7 @@ package org.shancm.ilocalproject;
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.util.*;
 
@@ -30,11 +29,19 @@ public class JavaCSVcase {
             // 定义一个CSV路径
             String originFile = "C:\\Users\\shancm\\Desktop\\呼叫成功模板.csv";
             String calledFile = "C:\\Users\\shancm\\Desktop\\呼叫成功模板 - called.csv";
+
+
+            OutputStream os = new FileOutputStream("desc.csv");
+
+//            CsvReader calledReader = new CsvReader(is, ',', Charset.forName("GBK"));
+
+
             // 创建CSV读对象 例如:CsvReader(文件路径，分隔符，编码格式);
             CsvReader originReader = new CsvReader(originFile, ',', Charset.forName("GBK"));
             CsvReader calledReader = new CsvReader(calledFile, ',', Charset.forName("GBK"));
             // 跳过表头 如果需要表头的话，这句可以忽略
             calledReader.readHeaders();
+            System.out.println(calledReader.getRawRecord());
 //            String[] header = calledReader.getValues();
 //            System.out.println(header+"header");
             // 逐行读入除表头的数据
@@ -47,7 +54,7 @@ public class JavaCSVcase {
             // 遍历读取的CSV文件
             for (int row = 0; row < calledFileList.size(); row++) {
 //                calledSet.put(calledFileList.get(row)[0], calledFileList.get(row)[4]);
-                calledSet.add(calledFileList.get(row)[0]+calledFileList.get(row)[4]);
+                calledSet.add(calledFileList.get(row)[0] + calledFileList.get(row)[4]);
             }
 
             calledReader.close();
@@ -55,13 +62,13 @@ public class JavaCSVcase {
             while (originReader.readRecord()) {
 //                System.out.println(originReader.getRawRecord());
 //                csvFileList.add(originReader.getValues());
-                    int size = calledSet.size();
-                calledSet.add(originReader.getValues()[0]+originReader.getValues()[4]);
-                System.out.println(originReader.getValues()[0]);
-                System.out.println(originReader.getValues()[4]);
-                    if (size != calledSet.size()){
-                        write.writeRecord(originReader.getValues());
-                    }
+                int size = calledSet.size();
+                calledSet.add(originReader.getValues()[0] + originReader.getValues()[4]);
+//                System.out.println(originReader.getValues()[0]);
+//                System.out.println(originReader.getValues()[4]);
+                if (size != calledSet.size()) {
+                    write.writeRecord(originReader.getValues());
+                }
             }
 
             originReader.close();

@@ -7,15 +7,20 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.*;
 
-//import com.uubee.risk.assist.id.IdWorker;
+/**
+ * @author shancm
+ */
+public class CallableTest {
 
-public class CallableTest<V> {
-	
+	/**
+	 *
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 		
-		final Set<Long> set = new HashSet<Long>(700000);
-		Collections.synchronizedSet(set);
-		
+        Set<Long> set = Collections.synchronizedSet(new HashSet<Long>(700000));
+
         ExecutorService threadPool = new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                 60L, TimeUnit.SECONDS,
                 new SynchronousQueue<Runnable>());
@@ -24,7 +29,7 @@ public class CallableTest<V> {
 		
 		long start = System.currentTimeMillis();
 		
-		for(int i=0; i<500000; i++) {
+		for(int i=0; i<500; i++) {
 			future = threadPool.submit(new Callable<Long>() {
 	            @Override
 				public Long call() throws Exception {

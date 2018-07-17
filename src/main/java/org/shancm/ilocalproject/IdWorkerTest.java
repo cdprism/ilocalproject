@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 
 import com.uubee.risk.assist.id.IdWorker;
 
-public class IdWorderTest {
+public class IdWorkerTest {
 	
 	private static long count = 0;
 	

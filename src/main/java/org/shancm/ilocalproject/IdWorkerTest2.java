@@ -3,11 +3,11 @@ package org.shancm.ilocalproject;
 import java.util.concurrent.*;
 
 import com.uubee.risk.assist.id.IdWorker;
-import org.apache.http.annotation.ThreadSafe;
 
-//import com.uubee.risk.assist.id.IdWorker;
-
-public class IdWorderTest2 {
+/**
+ * @author shancm
+ */
+public class IdWorkerTest2 {
 	
 	private static long count = 0;
 	
@@ -17,14 +17,14 @@ public class IdWorderTest2 {
 
 	public static void main(String[] args) throws Exception {
 		
-		IdWorderTest2 idWorderTest = new IdWorderTest2();
+		IdWorkerTest2 idWorderTest = new IdWorkerTest2();
 		
 		Runnable idWorkerThread = new Runnable() {
 			@Override
 			public void run() {
 				while(true) {
 					System.out.println(Thread.currentThread().getName()+" : "+IdWorker.getId());
-					IdWorderTest2.add();
+					IdWorkerTest2.add();
 				}
 			}
 		};
