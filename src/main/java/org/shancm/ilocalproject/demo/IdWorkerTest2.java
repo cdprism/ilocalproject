@@ -1,4 +1,4 @@
-package org.shancm.ilocalproject;
+package org.shancm.ilocalproject.demo;
 
 import java.util.concurrent.*;
 

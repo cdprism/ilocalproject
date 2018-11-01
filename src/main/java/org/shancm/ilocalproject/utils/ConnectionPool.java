@@ -1,4 +1,4 @@
-package org.shancm.utils;
+package org.shancm.ilocalproject.utils;
 
 import java.io.IOException;
 import java.io.InputStream;

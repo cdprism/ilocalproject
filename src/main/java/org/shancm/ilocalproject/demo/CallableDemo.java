@@ -1,6 +1,4 @@
-package org.shancm.ilocalproject;
-
-import com.uubee.risk.assist.id.IdWorker;
+package org.shancm.ilocalproject.demo;
 
 import java.util.ArrayList;
 import java.util.List;

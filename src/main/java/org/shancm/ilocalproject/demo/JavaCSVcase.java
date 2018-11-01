@@ -1,4 +1,4 @@
-package org.shancm.ilocalproject;
+package org.shancm.ilocalproject.demo;
 
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;

@@ -1,4 +1,4 @@
-package org.shancm.ilocalproject;
+package org.shancm.ilocalproject.demo;
 
 import com.uubee.risk.assist.id.IdWorker;
 
@@ -43,5 +43,16 @@ public class CallableTest {
 		
 		System.out.println(System.currentTimeMillis()-start);
 		System.out.println(set.size());
+	}
+
+	/**
+	 * @Param: [s]
+	 * @Author: shancm@bellion.com
+	 * @Date: 2018/7/19
+	 * @Description:
+	 * @return: void
+	 */
+	public void run(String s){
+
 	}
 }

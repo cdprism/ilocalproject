@@ -1,17 +1,8 @@
-package org.shancm.ilocalproject;
+package org.shancm.ilocalproject.demo;
 
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-import org.shancm.utils.DBUtil;
 //import org.testng.annotations.BeforeTest;
 //import org.testng.annotations.Test;
 
-import com.alibaba.fastjson.JSON;
 //import com.uubee.risk.assist.id.IdWorker;
 
 public class TestNGCase {

@@ -1,4 +1,4 @@
-package org.shancm.ilocalproject;
+package org.shancm.ilocalproject.demo;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -20,7 +20,6 @@ public class IdWorkerTest {
 	public static void main(String[] args) throws Exception {
 		
 		/*File file = new File("C:\\Users\\shancm\\Desktop\\record.txt");
-
 		FileOutputStream fileOutputStream = new FileOutputStream(file);
 		final PrintWriter printWriter = new PrintWriter(fileOutputStream);*/
 		
@@ -28,8 +27,7 @@ public class IdWorkerTest {
 		final String sql = "insert into dbbigdata.temp (id) values (?);";
 		final PreparedStatement  statement = connection.prepareStatement(sql);*/
 		
-		final Set<Long> set = new HashSet<Long>(7000);
-		Collections.synchronizedSet(set);
+		final Set<Long> set = Collections.synchronizedSet(new HashSet<Long>(7000));
 
 		ExecutorService executor = new ThreadPoolExecutor(0, Integer.MAX_VALUE,
 				60L, TimeUnit.SECONDS,
@@ -37,6 +35,7 @@ public class IdWorkerTest {
 		long start = System.currentTimeMillis();
 		for(int i=0; i<5000; i++) {
 			executor.execute(new Runnable() {
+				@Override
 				public void run() {
 					try {
 						/*statement.setLong(1, IdWorker.getId());

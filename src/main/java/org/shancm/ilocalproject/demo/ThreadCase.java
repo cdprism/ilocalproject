@@ -1,4 +1,4 @@
-package org.shancm.ilocalproject;
+package org.shancm.ilocalproject.demo;
 
 import java.util.Collections;
 import java.util.HashSet;
